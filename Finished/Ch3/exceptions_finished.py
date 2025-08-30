@@ -17,6 +17,7 @@ except:
 try:
     answer = input("What should I divide 10 by?")
     num = int(answer)
+    print(num)
     print(10 / num)
 except ZeroDivisionError as e:
     print("You can't divide by zero!")

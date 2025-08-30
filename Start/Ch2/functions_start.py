@@ -3,17 +3,35 @@
 
 
 # define a basic function
-print("hello world!")
-name = input("What is your name? ")
-print("Nice to meet you,", name)
+def hello_func():
+    print("hello world!")
+    name = input("What is your name? ")
+    print("Nice to meet you,", name)
 
-# function that takes parameters
+hello_func()
 
+# function that takes parameters and returns a value
+def cube(x):
+    return x*x*x
 
-# function that returns a value
+result = cube(3)
+print(result)
 
+# function with default value for an argument
+def hello_func(greeting, name=None):
+    print("hello world!")
+    if name == None:
+        name = input("What is your name? ")
+    print(greeting, name)
 
-# function with default value for an parameter
+hello_func("Nice to meet you", "Mike")
+hello_func(name="Joe", greeting="Hi there,")
 
+# function with variable number of arguments
+def multi_add(start, *args):
+    result = start
+    for x in args:
+        result = result + x
+    return result
 
-# function with variable number of parameters
+print(multi_add(10,4,5,10,4))
